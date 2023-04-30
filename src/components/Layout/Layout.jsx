@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 // import { Toaster } from 'react-hot-toast';
 import { StyledNavLink, Nav, Main } from './Layout.styled';
-
 import { Suspense } from 'react';
 
 export const Layout = () => {
