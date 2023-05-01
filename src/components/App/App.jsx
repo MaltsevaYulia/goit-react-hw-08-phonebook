@@ -10,12 +10,12 @@ import { ContactsPage } from 'pages/ContactPage/ContactsPage';
 import { LoginPage } from 'pages/LoginPage';
 
 export const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const isLoading = useSelector(getIsLoading);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <Routes>
