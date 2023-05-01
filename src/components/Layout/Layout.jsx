@@ -11,7 +11,7 @@ export const Layout = () => {
     <>
       <header>
         <Nav>
-          {/* <StyledNavLink to="/">Home</StyledNavLink> */}
+          <StyledNavLink to="/">Home</StyledNavLink>
           {isLoggedIn&&<StyledNavLink to="/contacts">Contacts</StyledNavLink>}
           <StyledNavLink to="/register">Register</StyledNavLink>
           <StyledNavLink to="/login">Login</StyledNavLink>
