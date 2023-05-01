@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,  } from 'react-redux';//useSelector
 
 import { fetchContacts } from 'redux/contacts/operations';
 import { useEffect } from 'react';
-import { getIsLoading } from 'redux/contacts/selectors';
+// import { getIsLoading } from 'redux/contacts/selectors';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';
@@ -11,7 +11,7 @@ import { LoginPage } from 'pages/LoginPage';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
+  // const isLoading = useSelector(getIsLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());
