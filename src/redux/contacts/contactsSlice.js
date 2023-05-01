@@ -1,7 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
-
 const contactsActions = [fetchContacts, addContact, deleteContact];
 const getActions = type => contactsActions.map(action => action[type]);
 

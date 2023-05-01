@@ -1,7 +1,7 @@
 import { ContactItem } from '../ContactItem/ContactItem';
 import css from './ContactList.module.css';
 import { useSelector } from 'react-redux';
-import { getContacts, getFilterValue } from '../../redux/selectors';
+import { getContacts, getFilterValue } from '../../redux/contacts/selectors';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -25,4 +25,3 @@ export const ContactList = () => {
     </ul>
   );
 };
-

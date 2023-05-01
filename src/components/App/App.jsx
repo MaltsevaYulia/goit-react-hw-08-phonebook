@@ -1,14 +1,13 @@
+import { useDispatch, useSelector } from 'react-redux';
 
-import {  useDispatch, useSelector } from 'react-redux';
-
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { useEffect } from 'react';
-import { getIsLoading } from 'redux/selectors';
+import { getIsLoading } from 'redux/contacts/selectors';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 import { RegisterPage } from 'pages/RegisterPage';
-import { ContactsPage } from 'components/pages/ContactPage/ContactsPage';
-
+import { ContactsPage } from 'pages/ContactPage/ContactsPage';
+import { LoginPage } from 'pages/LoginPage';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,13 +20,10 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="contacts" element={<ContactsPage/>} />
+        <Route path="contacts" element={<ContactsPage />} />
         <Route path="register" element={<RegisterPage />} />
-        <Route path="login" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
       </Route>
     </Routes>
   );
 };
-
-
-
