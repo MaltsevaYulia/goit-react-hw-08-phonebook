@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut } from './operations';
+import { register, logIn, logOut, refreshUser } from './operations';
 
 // const contactsActions = [register, logIn, logOut];
 // const getActions = type => contactsActions.map(action => action[type]);
@@ -16,6 +16,7 @@ export const authSlice = createSlice({
   initialState,
   extraReducers: builder =>
     builder
+      .addCase(register.pending, state => state)
       .addCase(register.fulfilled, (state, action) => {
         console.log(action.payload.user);
         state.user = action.payload.user;
@@ -31,6 +32,17 @@ export const authSlice = createSlice({
         state.user = { name: null, email: null };
         state.token = null;
         state.isLoggedIn = false;
+      })
+      .addCase(refreshUser.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshUser.rejected, state => {
+        state.isRefreshing = false;
       }),
   //   .addMatcher(
   //     // isAnyOf(...contactsActions.map(action => action.pending)),
