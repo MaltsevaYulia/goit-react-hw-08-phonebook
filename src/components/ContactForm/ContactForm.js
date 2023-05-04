@@ -5,6 +5,9 @@ import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/contacts/selectors';
+import toast from 'react-hot-toast';
+
+const notifyError = name => toast.error(`${name} is already in contacts`);
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -31,7 +34,7 @@ export const ContactForm = () => {
     e.preventDefault();
 
     if (contacts.find(el => el.name.toLowerCase() === name.toLowerCase())) {
-      alert(`${name} is already in contacts`);
+      notifyError(name);
       return;
     }
     dispatch(addContact({ name, number }));
@@ -41,7 +44,7 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleSabmit} className={css.contact_form}>
-      <label>Name</label>
+      <label className={css.label}>Name</label>
       <input
         type="text"
         name="name"

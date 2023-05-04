@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-label,
+/* label,
 input,
 button {
   display: block;
@@ -52,4 +52,4 @@ button {
 
 button:hover {
   box-shadow: none;
-}
+} */

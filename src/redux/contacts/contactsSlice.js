@@ -1,8 +1,9 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-
+import toast from 'react-hot-toast';
 const contactsActions = [fetchContacts, addContact, deleteContact];
 const getActions = type => contactsActions.map(action => action[type]);
+const notifySuccess = text => toast.success(text);
 
 export const contactsSlice = createSlice({
   name: 'contacts',
@@ -21,6 +22,7 @@ export const contactsSlice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
         state.isLoading = false;
+        notifySuccess(`Contact ${action.payload.name} added successfully`);
       })
       .addCase(deleteContact.fulfilled, (state, action) => {
         const index = state.items.findIndex(
@@ -28,6 +30,7 @@ export const contactsSlice = createSlice({
         );
         state.items.splice(index, 1);
         state.isLoading = false;
+        notifySuccess(`Contact ${action.payload.name} deleted successfully`);
       })
       .addMatcher(
         // isAnyOf(...contactsActions.map(action => action.pending)),
