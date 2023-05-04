@@ -1,10 +1,23 @@
 .container {
-  position: relative;
+  /* position: relative;
   width: 550px;
-  /* height: 500px; */
+ 
   border-radius: 20px;
   padding: 40px;
   box-sizing: border-box;
   background: #ecf0f3;
-  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white; */
+}
+
+.title{
+  margin: 10px 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
 }

@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import {  Main } from './Layout.styled';
-import { Children, Suspense } from 'react';
+import { Suspense } from 'react';
 // import { useAuth } from 'hooks/useAuth';
 // import { AuthNav } from 'components/AuthNav/AuthNav';
 // import { UserMenu } from 'components/UserMenu/UserMenu';
@@ -29,7 +29,6 @@ export const Layout = () => {
             <div className={css.login_content}>
               <Suspense fallback={<div>Loading...</div>}>
                 <Outlet />
-                {/* {Children} */}
               </Suspense>
             </div>
           </div>

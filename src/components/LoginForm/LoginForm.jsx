@@ -8,7 +8,7 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import css from '../../components/LoginForm/LoginForm.module.css';
 
 export const LoginForm = () => {
-  const [focus, setFocus] = useState('')
+  const [focus, setFocus] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -24,13 +24,13 @@ export const LoginForm = () => {
     form.reset();
   };
 
-  const handleFocus = (e) => {
+  const handleFocus = e => {
     if (e.currentTarget.name === 'email') setFocus('email');
     if (e.currentTarget.name === 'password') setFocus('password');
-  }
- const handleBlur = () => {
-   setFocus('');
- };
+  };
+  const handleBlur = () => {
+    setFocus('');
+  };
 
   return (
     <div className={css.login_content}>
@@ -77,15 +77,6 @@ export const LoginForm = () => {
             />
           </div>
         </div>
-
-        {/* <label>
-          Email
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" />
-        </label> */}
         <button type="submit" className={css.btn}>
           Log In
         </button>

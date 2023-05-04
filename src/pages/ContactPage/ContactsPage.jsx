@@ -16,9 +16,9 @@ export const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.container}>
+    <div>
       {/* <Helmet> */}
-      <h1>Phonebook</h1>
+      <h1 className={css.title}>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
