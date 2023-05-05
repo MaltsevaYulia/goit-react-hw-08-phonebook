@@ -13,7 +13,7 @@ export const ContactList = () => {
   );
 
   return (
-    <ul>
+    <ul className={css.contact_list}>
       {visibleContacts.length > 0 &&
         visibleContacts.map(({ name, number, id }) => {
           return (

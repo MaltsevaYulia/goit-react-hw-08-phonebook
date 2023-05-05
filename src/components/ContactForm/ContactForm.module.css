@@ -82,12 +82,18 @@
 	right: 50%;
 }
 
-.input-div:after{
+.input_div:before {
+  right: 50%;
+}
+
+.input_div:after{
 	left: 50%;
 }
 
-.input_div.focus ~ .before, .input_div.focus:after{
-	width: 50%;
+.input_div.focus ~ .before,
+.input_div.focus:after,
+.input_div.focus:before {
+  width: 50%;
 }
 
 .input_div.focus > div > h5{

@@ -13,3 +13,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav_link {
+color: #212121;
+  text-decoration: none;
+  font-family: 'poppins', sans-serif;
+  font-size: 20px;
+}
+
+.nav_link.active {
+    color: #38d39f;
+}

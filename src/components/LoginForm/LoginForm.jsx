@@ -8,7 +8,8 @@ import { RiLockPasswordLine } from 'react-icons/ri';
 import css from '../../components/LoginForm/LoginForm.module.css';
 
 export const LoginForm = () => {
-  const [focus, setFocus] = useState('');
+  const [focusEmail, setFocusfocusEmail] = useState('');
+  const [focusPassword, setFocusPassword] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -25,11 +26,15 @@ export const LoginForm = () => {
   };
 
   const handleFocus = e => {
-    if (e.currentTarget.name === 'email') setFocus('email');
-    if (e.currentTarget.name === 'password') setFocus('password');
+    if (e.currentTarget.name === 'email') setFocusfocusEmail('email');
+    if (e.currentTarget.name === 'password') setFocusPassword('password');
   };
-  const handleBlur = () => {
-    setFocus('');
+  const handleBlur = (e) => {
+    
+    if (e.target.value === '' && e.target.name === 'email')
+      setFocusfocusEmail('');
+    if (e.target.value === '' && e.target.name === 'password')
+      setFocusPassword('');
   };
 
   return (
@@ -38,7 +43,7 @@ export const LoginForm = () => {
         <h2 className={css.title}>Welcome</h2>
         <div
           className={`${css.input_div}  ${css.one} ${
-            focus === 'email' && css.focus
+            focusEmail === 'email' && css.focus
           }`}
         >
           <div className={css.i}>
@@ -59,7 +64,7 @@ export const LoginForm = () => {
         </div>
         <div
           className={`${css.input_div} ${css.pass} ${
-            focus === 'password' && css.focus
+            focusPassword === 'password' && css.focus
           }`}
         >
           <div className={css.i}>

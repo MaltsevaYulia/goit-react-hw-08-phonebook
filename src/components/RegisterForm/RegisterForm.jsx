@@ -29,8 +29,8 @@ export const RegisterForm = () => {
     if (e.currentTarget.name === 'password') setFocus('password');
     if (e.currentTarget.name === 'name') setFocus('name');
   };
-  const handleBlur = () => {
-    setFocus('');
+  const handleBlur = (e) => {
+    setFocus('') ;
   };
 
   return (
