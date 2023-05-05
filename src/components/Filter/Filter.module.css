@@ -63,14 +63,16 @@
 	transition: .3s;
 }
 
-.input_div ~ .before, .input_div:after{
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	width: 0%;
-	height: 2px;
-	background-color: #38d39f;
-	transition: .4s;
+.input_div ~ .before,
+.input_div:after,
+.input_div:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #38d39f;
+  transition: 0.4s;
 }
 
 /* .before{
@@ -82,12 +84,18 @@
 	right: 50%;
 }
 
-.input-div:after{
+.input_div:before {
+  right: 50%;
+}
+
+.input_div:after{
 	left: 50%;
 }
 
-.input_div.focus ~ .before, .input_div.focus:after{
-	width: 50%;
+.input_div.focus ~ .before,
+.input_div.focus:after,
+.input_div.focus:before {
+  width: 50%;
 }
 
 .input_div.focus > div > h5{

@@ -14,7 +14,8 @@ const notifyError = name => toast.error(`${name} is already in contacts`);
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-    const [focus, setFocus] = useState('');
+  const [focusName, setFocusName] = useState('');
+  const [focusNumber, setFocusNumber] = useState('');
 
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
@@ -44,14 +45,17 @@ export const ContactForm = () => {
     setName('');
     setNumber('');
   };
+
   const handleFocus = e => {
-    if (e.currentTarget.name === 'email') setFocus('email');
-    if (e.currentTarget.name === 'password') setFocus('password');
-    if (e.currentTarget.name === 'name') setFocus('name');
-    if (e.currentTarget.name === 'number') setFocus('number');
+    if (e.currentTarget.name === 'name') setFocusName('name');
+    if (e.currentTarget.name === 'number') setFocusNumber('number');
   };
-  const handleBlur = () => {
-    setFocus('');
+
+  const handleBlur = e => {
+    if (e.target.value === '' && e.target.name === 'name')
+      setFocusName('');
+    if (e.target.value === '' && e.target.name === 'number')
+      setFocusNumber('');
   };
 
   return (
@@ -59,7 +63,7 @@ export const ContactForm = () => {
       <form onSubmit={handleSabmit} className={css.form}>
         <div
           className={`${css.input_div} ${css.pass} ${
-            focus === 'name' && css.focus
+            focusName === 'name' && css.focus
           }`}
         >
           <div className={css.i}>
@@ -82,22 +86,9 @@ export const ContactForm = () => {
             />
           </div>
         </div>
-
-        {/* <label className={css.label}>Name</label>
-      <input
-        type="text"
-        name="name"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        value={name}
-      /> */}
         <div
           className={`${css.input_div} ${css.pass} ${
-            focus === 'number' && css.focus
+            focusNumber === 'number' && css.focus
           }`}
         >
           <div className={css.i}>
@@ -120,19 +111,6 @@ export const ContactForm = () => {
             />
           </div>
         </div>
-
-        {/* <label>
-          Number
-          <input
-            type="tel"
-            name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
-            onChange={handleChange}
-            value={number}
-          />
-        </label> */}
         <button type="submit" className={css.btn}>
           Add contact
         </button>

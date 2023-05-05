@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContacts } from 'redux/contacts/filterSlice';
 import { getFilterValue } from 'redux/contacts/selectors';
-import { BiUser } from 'react-icons/bi';
+import { BiFilterAlt } from 'react-icons/bi';
 import css from './Filter.module.css';
 
 export const Filter = () => {
@@ -31,7 +31,7 @@ export const Filter = () => {
           }`}
         >
           <div className={css.i}>
-            <BiUser className={css.before} />
+            <BiFilterAlt className={css.before} />
             <i className={`${css.fas} ${css.fa_lock}`}></i>
           </div>
           <div className={css.div}>
@@ -49,10 +49,6 @@ export const Filter = () => {
         </div>
       </div>
     </div>
-    // <label>
-    //   Find contacts by name
-    //   <input type="text" value={filterValue} onChange={handleFilterChenge} />
-    // </label>
   );
 };
 

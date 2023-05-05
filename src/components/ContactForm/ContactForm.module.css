@@ -63,14 +63,16 @@
 	transition: .3s;
 }
 
-.input_div ~ .before, .input_div:after{
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	width: 0%;
-	height: 2px;
-	background-color: #38d39f;
-	transition: .4s;
+.input_div ~ .before,
+.input_div:after,
+.input_div:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #38d39f;
+  transition: 0.4s;
 }
 
 /* .before{

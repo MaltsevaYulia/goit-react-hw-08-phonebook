@@ -7,10 +7,14 @@ import css from '../ContactPage/ContactPage.module.css';
 // import { Helmet } from 'react-helmet';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
+import { useSearchParams } from 'react-router-dom';
 
 export const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsLoading);
+const param=useSearchParams()
+console.log("🚀 ~ ContactsPage ~ param:", param)
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
