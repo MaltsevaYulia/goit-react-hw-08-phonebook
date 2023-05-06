@@ -7,7 +7,9 @@ import css from './RegisterForm.module.css';
 import { useState } from 'react';
 
 export const RegisterForm = () => {
-  const [focus, setFocus] = useState('');
+  const [focusEmail, setFocusfocusEmail] = useState('');
+  const [focusPassword, setFocusPassword] = useState('');
+  const [focusName, setFocusName] = useState('');
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -25,12 +27,16 @@ export const RegisterForm = () => {
   };
 
   const handleFocus = e => {
-    if (e.currentTarget.name === 'email') setFocus('email');
-    if (e.currentTarget.name === 'password') setFocus('password');
-    if (e.currentTarget.name === 'name') setFocus('name');
+    if (e.currentTarget.name === 'email') setFocusfocusEmail('email');
+    if (e.currentTarget.name === 'password') setFocusPassword('password');
+    if (e.currentTarget.name === 'name') setFocusName('name');
   };
-  const handleBlur = (e) => {
-    setFocus('') ;
+  const handleBlur = e => {
+    if (e.target.value === '' && e.target.name === 'email')
+      setFocusfocusEmail('');
+    if (e.target.value === '' && e.target.name === 'password')
+      setFocusPassword('');
+    if (e.target.value === '' && e.target.name === 'name') setFocusName('');
   };
 
   return (
@@ -39,7 +45,7 @@ export const RegisterForm = () => {
         <h2 className={css.title}>Welcome</h2>
         <div
           className={`${css.input_div} ${css.pass} ${
-            focus === 'name' && css.focus
+            focusName === 'name' && css.focus
           }`}
         >
           <div className={css.i}>
@@ -59,7 +65,7 @@ export const RegisterForm = () => {
         </div>
         <div
           className={`${css.input_div}  ${css.one} ${
-            focus === 'email' && css.focus
+            focusEmail === 'email' && css.focus
           }`}
         >
           <div className={css.i}>
@@ -80,7 +86,7 @@ export const RegisterForm = () => {
         </div>
         <div
           className={`${css.input_div} ${css.pass} ${
-            focus === 'password' && css.focus
+            focusPassword === 'password' && css.focus
           }`}
         >
           <div className={css.i}>
