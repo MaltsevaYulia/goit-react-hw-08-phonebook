@@ -1,4 +1,3 @@
-
 import { useAuth } from 'hooks/useAuth';
 import { AuthNav } from 'components/AuthNav/AuthNav';
 import { UserMenu } from 'components/UserMenu/UserMenu';
@@ -13,7 +12,6 @@ export const Navigation = () => {
       <NavLink className="nav_link" to="/">
         Home
       </NavLink>
-      {/* {isLoggedIn && <StyledNavLink to="/contacts">Contacts</StyledNavLink>} */}
       {isLoggedIn ? (
         <>
           <NavLink className="nav_link" to="/contacts">
@@ -24,8 +22,6 @@ export const Navigation = () => {
       ) : (
         <AuthNav />
       )}
-      {/* <StyledNavLink to="/register">Register</StyledNavLink>
-      <StyledNavLink to="/login">Login</StyledNavLink> */}
     </nav>
   );
 };

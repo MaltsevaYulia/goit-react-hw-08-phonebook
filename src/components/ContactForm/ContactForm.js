@@ -2,7 +2,7 @@ import { useState } from 'react';
 import css from './ContactForm.module.css';
 import { BiUser } from 'react-icons/bi';
 import { BsTelephone } from 'react-icons/bs';
-// import PropTypes from 'prop-types';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
@@ -119,11 +119,4 @@ export const ContactForm = () => {
   );
 };
 
-// ContactForm.protoType = {
-//   addContact: PropTypes.func.isRequired,
-//   contacts: PropTypes.arrayOf({
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//     id: PropTypes.string.isRequired,
-//   }),
-// };
+

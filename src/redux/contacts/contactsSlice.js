@@ -33,14 +33,12 @@ export const contactsSlice = createSlice({
         notifySuccess(`Contact ${action.payload.name} deleted successfully`);
       })
       .addMatcher(
-        // isAnyOf(...contactsActions.map(action => action.pending)),
         isAnyOf(...getActions('pending')),
         state => {
           state.isLoading = true;
         }
       )
       .addMatcher(
-        // isAnyOf(...contactsActions.map(action => action.rejected)),
         isAnyOf(...getActions('rejected')),
         (state, action) => {
           state.isLoading = false;

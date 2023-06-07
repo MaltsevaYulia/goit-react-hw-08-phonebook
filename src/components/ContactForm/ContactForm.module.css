@@ -75,10 +75,6 @@
   transition: 0.4s;
 }
 
-/* .before{
-     width: 20em;
-    height: 20em
-} */
 
 .input_div ~ .before{
 	right: 50%;
@@ -123,23 +119,6 @@
 	color: #555;
 	font-family: 'poppins', sans-serif;
 }
-
-/* .input_div.pass{
-	margin-bottom: 4px;
-} */
-
-/* a{
-	display: block;
-	text-align: right;
-	text-decoration: none;
-	color: #999;
-	font-size: 0.9rem;
-	transition: .3s;
-}
-
-a:hover{
-	color: #38d39f;
-} */
 
 .btn{
 	display: block;

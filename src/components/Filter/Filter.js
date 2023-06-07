@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterContacts } from 'redux/contacts/filterSlice';
@@ -52,7 +51,3 @@ export const Filter = () => {
   );
 };
 
-// Filter.protoType = {
-//   value: PropTypes.string.isRequired,
-//   changeFilter:PropTypes.func.isRequired,
-// }

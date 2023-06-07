@@ -24,7 +24,6 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
-    /* padding: 0 2rem; */
 	padding: 70px 0;
 }
 
@@ -47,7 +46,6 @@ body{
 .login_content{
 	display: flex;
 	justify-content: flex-start;
-	/* align-items: center; */
 	align-items: flex-start;
 	text-align: center;
 	
